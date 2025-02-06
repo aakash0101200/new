@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form with OTP Verification</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form id="registrationForm">
+    <h2>Registration Form</h2>
+    
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" class="inputcss" placeholder="Enter your name" required />
+
+    <label for="mobileno">Mobile Number</label>
+    <div class="phone-input">
+      <span>+91</span>
+      <input type="text" id="mobileno" name="mobileno" class="inputcss" maxlength="10" placeholder="Enter your mobile number" required />
+    </div>
+    <button type="button" id="sendOtp" class="submit-btn">Send OTP</button>
+
+    <label for="otp">Enter OTP</label>
+    <input type="text" id="otp" name="otp" class="inputcss" placeholder="Enter OTP" required />
+
+    <label>Is your WhatsApp number the same as your mobile number?</label>
+    <div>
+      <input type="radio" id="radio0" name="sameNumber" value="yes" onchange="whatsappsame()" />
+      <label for="radio0">Yes</label>
+      <input type="radio" id="radio1" name="sameNumber" value="no" onchange="whatsappsame()" checked />
+      <label for="radio1">No</label>
+    </div>
+
+    <label for="wmobileno">WhatsApp Number</label>
+    <div id="wa-container" class="phone-input">
+      <span>+91</span>
+      <input type="text" id="wmobileno" name="wmobileno" class="inputcss" maxlength="10" placeholder="Enter your WhatsApp number" required />
+      <div id="errorwMobileno" style="display:none;">Error message</div>
+    </div>
+
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" name="dob" class="inputcss" placeholder="Enter your date of birth" required />
+    <span id="ageError" style="color: red; display: none;">You must be at least 14 years old.</span>
+
+    <label for="address">Address</label>
+    <textarea id="address" name="address" class="inputcss" placeholder="Enter your address" required></textarea>
+
+    <label for="currentStatus">Current Working Status</label>
+    <select id="currentStatus" name="currentStatus" class="inputcss" required>
+      <option value="">Select</option>
+      <option value="employed">Employed</option>
+      <option value="unemployed">Unemployed</option>
+      <option value="student">Student</option>
+    </select>
+
+    <label for="location">Location</label>
+    <input type="text" id="location" name="location" class="inputcss" placeholder="Enter your location" required />
+
+    <label for="why">Why do you want to work with us?</label>
+    <textarea id="why" name="why" class="inputcss" placeholder="Tell us why" required></textarea>
+
+    <label for="where">Where did you hear about us?</label>
+    <input type="text" id="where" name="where" class="inputcss" placeholder="Enter the source" required />
+
+    <label for="howMuch">How much experience do you have?</label>
+    <input type="text" id="howMuch" name="howMuch" class="inputcss" placeholder="Enter your experience" required />
+
+    <button type="submit" id="submit" class="submit-btn">Submit</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
